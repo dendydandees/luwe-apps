@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+    --primary-color: #845EC2;
+    --secondary-color: #00C9A7;
+    --white-color: #fff;
+    --background-base: #f2f2f2;
+    --container-padding : 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    height: 60px;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-base);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-base);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+a {
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+    filter: brightness(125%);
+}
+
+button {
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+button:active {
+    border: 1px solid black;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    margin: 1.5rem 0rem;
+}
+
+h2 {
+    margin: 1.5rem 0rem;
+}
+
+h3 {
+    margin: 1.5rem 0rem;
+}
+
+.skip-link {
+   position: absolute;
+   top: -40px;
+   left: 0;
+   background-color: var(--secondary-color);
+   color: white;
+   padding: 8px;
+   z-index: 100;
+}
+
+.skip-link:focus {
+   top: 0;
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 1rem var(--container-padding);
+    z-index: 2;
+}
+
+header .logo {
+    margin: 0rem 0rem;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    font-weight: 700;
+    min-width: 44px;
+    min-height: 44px;
+    line-height: 44px;
+}
+
+header nav {
+    display: none;
+}
+
+header nav a {
+    display: inline-block;
+    color: var(--white-color);
+    border-radius: 0.5rem;
+    margin: 0rem 0.5rem;
+    padding: 0rem 1rem;
+    min-width: 44px;
+    min-height: 44px;
+    line-height: 44px;
+}
+header nav a:hover {
+    color: var(--primary-color);
+    background-color: var(--white-color);
+}
+
+header button {
+    padding: 0rem;
+    background-color: var(--primary-color);
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.mobile-nav-button-active {
+    background-color: var(--white-color);
+}
+
+header #mobile-nav {
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    left: 0;
+    top: -400px;
+    background-color: var(--primary-color);
+    width: 100%;
+    padding-bottom: 1rem;
+    z-index: 1;
+}
+
+header #mobile-nav a {
+    display: block;
+    color: var(--white-color);
+    padding: 1rem;
+    margin: 0.5rem 0rem;
+}
+
+header #mobile-nav a:hover {
+    display: block;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    padding: 1rem;
+}
+
+.mobile-nav-show {
+    top: 69px !important;
+}
+/* end header */
+
+main {
+    /* max-width: 1200px; */
+    margin: 0rem auto;
+}
+
+/* hero */
+#hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("/images/heros/hero-image_4.jpg");
+    height: 24rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 1rem var(--container-padding);
+}
+
+#hero div {
+    display: block;
+    transform: translate(0%, 10%);
+    max-width: 800px;
+}
+
+#hero div h2 {
+    margin: 0rem 0rem 1rem 0rem;
+    color: var(--white-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#hero div p {
+    margin: 0rem 0rem 2rem 0rem;
+    color: var(--white-color);
+    font-weight: 400;
+}
+
+#hero div a {
+    display: inline-block;
+    border-radius: 4px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+}
+/* end hero */
+
+/* content */
+#content {
+    padding: 1rem var(--container-padding);
+}
+
+#list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem 1rem;
+    align-items: stretch;
+}
+
+#list a {
+    background-color: var(--white-color);
+    color: #000;
+    border-radius: 4px;
+}
+
+#list a img {
+    object-fit: cover;
+    object-position: center;
+    filter: contrast(0.8);
+    width: 100%;
+    height: 12rem;
+}
+
+#list a:hover {
+    filter: brightness(90%);
+    text-decoration: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#list a #list-content {
+    padding: 1.5rem 1rem;
+}
+
+#list a #list-content div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#list a #rating {
+    margin: 0;
+}
+
+#list a #city {
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: 400;
+    padding: 0.5rem 0.5rem;
+    background-color: var(--secondary-color);
+    margin: 0rem;
+}
+
+#list a #resto-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#list a #desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-bottom: 2rem;
+}
+
+#list a #list-content button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+#list a #list-content button:hover {
+    filter: brightness(125%);
+}
+/* end content */
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 1rem 1rem;
+    color: white;
+    background-color: var(--primary-color);
+    font-weight: 700;
+}
+/* end footer */
+
+/* tablet device */
+@media screen and (min-width: 768px) {
+    #hero div {
+        transform: translate(0%, 20%);
+        width: 75%;
+    }
+
+    #list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* end tablet device */
+
+/* device with 1024px width */
+@media screen and (min-width: 1024px) {
+    :root {
+        --container-padding: 2rem;
+    }
+
+    header nav {
+        display: block;
+    }
+
+    header button {
+        display: none;
+    }
+
+    header #mobile-nav {
+        display: none;
+    }
+
+    #hero div {
+        width: 38%;
+    }
+
+    #hero div p {
+        width: 75%;
+    }
+
+    #list a img {
+        height: 14rem;
+    }
+}
+/* end device with 1024px width */
+
+/* device with 1440px width */
+@media screen and (min-width: 1440px) {
+    :root {
+        --container-padding: 4rem;
+    }
+
+    #hero div {
+        transform: translate(0%, 30%);
+    }
+}
+/* end device with 1440px width */
