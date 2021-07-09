@@ -1,7 +1,6 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import 'normalize.css';
 import '../styles/main.css';
-import data from '../DATA.json';
 import App from './views/app';
 import serviceWorkerRegister from './utils/service-worker-register';
 

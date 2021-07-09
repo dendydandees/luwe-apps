@@ -1,10 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-import {
-  restaurantDetailTemplate,
-  createLikeButtonTemplate,
-} from '../templates/template-creator';
+import { restaurantDetailTemplate } from '../templates/template-creator';
 
 const DetailRestaurant = {
   async render() {
@@ -31,7 +28,7 @@ const DetailRestaurant = {
         restaurant,
       });
     } catch (error) {
-      restaurantContainer.innerHTML += `<p style="text-align:center">Gagal memuat, silahkan refresh halaman !</p>`;
+      restaurantContainer.innerHTML += '<p style="text-align:center">Gagal memuat, silahkan refresh halaman !</p>';
       likeButtonContainer.remove();
     } finally {
       document.querySelector('#loading').remove();

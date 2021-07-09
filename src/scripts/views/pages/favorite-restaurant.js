@@ -32,7 +32,7 @@ const FavoriteRestaurant = {
     } catch (error) {
       document.querySelector(
         '#content',
-      ).innerHTML += `<p style="text-align:center">Gagal memuat, silahkan refresh halaman !</p>`;
+      ).innerHTML += '<p style="text-align:center">Gagal memuat, silahkan refresh halaman !</p>';
     } finally {
       document.querySelector('#loading').remove();
     }

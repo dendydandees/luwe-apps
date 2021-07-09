@@ -1,11 +1,13 @@
 import CONFIG from '../../globals/config';
 
-const iconActiveTemplate = `<span class="iconify" data-icon="system-uicons:menu-hamburger" data-inline="false" data-width="40px" data-height="40px" style="color: #fff;" ></span>`;
+const iconActiveTemplate = '<span class="iconify" data-icon="system-uicons:menu-hamburger" data-inline="false" data-width="40px" data-height="40px" style="color: #fff;" ></span>';
 
-const iconNonActiveTemplate = `<span class="iconify" data-icon="mdi:close" data-inline="false" style="color: #845EC2;" data-width="40px" data-height="40px"></span>`;
+const iconNonActiveTemplate = '<span class="iconify" data-icon="mdi:close" data-inline="false" style="color: #845EC2;" data-width="40px" data-height="40px"></span>';
 
 const restaurantListTemplate = (restaurant) => {
-  const { id, name, pictureId, city, rating, description } = restaurant;
+  const {
+    id, name, pictureId, city, rating, description,
+  } = restaurant;
 
   return `<a href="${`/#/detail/${id}`}" title="${name}">
         <img src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}">
@@ -25,7 +27,6 @@ const restaurantListTemplate = (restaurant) => {
 
 const restaurantDetailTemplate = (restaurant) => {
   const {
-    id,
     name,
     pictureId,
     city,
@@ -64,21 +65,19 @@ const restaurantDetailTemplate = (restaurant) => {
   <div class="detail-container">
     <h3>Penilaian dan Ulasan</h3>
     <p><b>Rating ${rating} <small>(${
-    customerReviews.length
-  } Ulasan)</small></b></p>
+  customerReviews.length
+} Ulasan)</small></b></p>
     <div id="review-customer">
       <ul>
         ${customerReviews
-          .slice(0, 5)
-          .map((review) => {
-            return `<li>
+    .slice(0, 5)
+    .map((review) => `<li>
             <small>Diulas pada ${review.date}</small>
             <p><b>${review.name}</b></p>
             <p>${review.review}</p>
           </li>
-          <hr>`;
-          })
-          .join('')}
+          <hr>`)
+    .join('')}
       </ul>
     </div>
   </div>
