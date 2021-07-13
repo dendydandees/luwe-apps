@@ -1,6 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import FavoriteRestaurantIdb from '../../data/restaurant-idb';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import { restaurantDetailTemplate } from '../templates/template-creator';
 
 const DetailRestaurant = {
@@ -23,9 +24,10 @@ const DetailRestaurant = {
       const restaurant = await RestaurantSource.restaurantDetail(url.id);
       restaurantContainer.innerHTML += restaurantDetailTemplate(restaurant);
 
-      await LikeButtonInitiator.init({
+      await LikeButtonPresenter.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         restaurant,
+        favoriteRestaurant: FavoriteRestaurantIdb,
       });
     } catch (error) {
       restaurantContainer.innerHTML += '<p style="text-align:center">Gagal memuat, silahkan refresh halaman !</p>';
