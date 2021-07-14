@@ -10,7 +10,9 @@ const restaurantListTemplate = (restaurant) => {
   } = restaurant;
 
   return `<a href="${`/#/detail/${id}`}" title="${name}">
-        <img src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}">
+        <img data-src="${
+  CONFIG.BASE_IMAGE_URL
+}${pictureId}" alt="${name}" class="lazyload">
         <div id="list-content">
           <div>
               <p id="city">${city}</p>
