@@ -19,7 +19,7 @@ const FavoriteRestaurant = {
     try {
       const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
 
-      if (restaurants.length === 0) {
+      if (!restaurants.length) {
         document.querySelector(
           '#content',
         ).innerHTML += `<p style="text-align:center">Anda belum menambahkan restoran favorit Anda !</p>

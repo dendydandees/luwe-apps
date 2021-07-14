@@ -10,7 +10,9 @@ const restaurantListTemplate = (restaurant) => {
   } = restaurant;
 
   return `<a href="${`/#/detail/${id}`}" title="${name}">
-        <img src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}">
+        <img data-src="${
+  CONFIG.BASE_IMAGE_URL
+}${pictureId}" alt="${name}" class="lazyload">
         <div id="list-content">
           <div>
               <p id="city">${city}</p>
@@ -68,30 +70,30 @@ const restaurantDetailTemplate = (restaurant) => {
   customerReviews.length
 } Ulasan)</small></b></p>
     <div id="review-customer">
-      <ul>
         ${customerReviews
     .slice(0, 5)
-    .map((review) => `<li>
+    .map(
+      (review) => `<div>
             <small>Diulas pada ${review.date}</small>
             <p><b>${review.name}</b></p>
             <p>${review.review}</p>
-          </li>
-          <hr>`)
+          <hr>
+          </div>`,
+    )
     .join('')}
-      </ul>
     </div>
   </div>
   `;
 };
 
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+const createLikeRestaurantButtonTemplate = () => `
+  <button aria-label="like this restaurant" id="likeButton" class="like">
      <span class="iconify" data-icon="mdi:bookmark-outline" data-inline="false" style="color: #fff;" data-width="24px" data-height="24px"></span>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+const createUnlikeRestaurantButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <span class="iconify" data-icon="mdi:bookmark" data-inline="false" style="color: #fff;" data-width="24px" data-height="24px"></span>
   </button>
 `;
@@ -101,6 +103,6 @@ export {
   iconNonActiveTemplate,
   restaurantListTemplate,
   restaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 };
